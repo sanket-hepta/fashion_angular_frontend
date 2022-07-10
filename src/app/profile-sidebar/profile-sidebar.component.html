@@ -1,0 +1,49 @@
+<div class="col-md-3 profile-sidebar-menu">
+    <div class="profile-page-sidebar box-shadow">
+        <div class="accountNavigationName title">
+            WELCOME DOE
+        </div>
+        <div class="accountUserNavigation">
+            <div class="profile-sidebar-tab title profileLink active"><a [routerLink]="['/profile']">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve"><g>
+                    <path fill="none" stroke="#909090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+                        M46,25c0,11.598-9.402,21-21,21c-5.741,0-10.944-2.304-14.735-6.037C6.398,36.154,4,30.857,4,25C4,13.402,13.402,4,25,4
+                        C36.598,4,46,13.402,46,25z"/>
+                    <path fill="none" stroke="#909090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+                        M11.504,39.691c0,0,8.448-2.896,9.293-4.707v-3.861c0,0-2.293-2.535-2.293-4.587c0,0-2.776-2.896-0.604-4.103
+                        c0,0-3.862-17.621,10.138-11.586c0,0,6.276,0.121,4.345,10.742c0,0,1.69,2.655-0.965,4.948c0,0-0.241,1.328-2.173,4.104v4.587
+                        c0,0,8.436,4.459,9.95,5.247"/>                            
+                    </g>
+                </svg> Profile</a>
+            </div>
+                
+            <div class="profile-sidebar-tab title wishlistLink active">
+                <a [routerLink]="['/wishlist']">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                    <g>
+                        <path fill="none" stroke="#909090" stroke-width="2" stroke-miterlimit="10" d="M25,10.266c0,0,5.679-8.124,15.63-4.265
+                            c0,0,11.679,4.671,5.891,18.279c0,0-0.29,6.905-21.521,20.818"/>
+                        <path fill="none" stroke="#909090" stroke-width="2" stroke-miterlimit="10" d="M25,10.208c0,0-5.679-8.124-15.631-4.265
+                            c0,0-11.678,4.671-5.89,18.279c0,0,0.29,6.904,21.521,20.817"/>
+                    </g>
+                    </svg>
+                    Wishlist
+                </a>
+            </div>
+            
+            
+            <div class="profile-sidebar-tab title" (click)="logout()">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                    <path fill="none" stroke="#909090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+                        M42.444,36.806c-3.795,5.616-10.221,9.311-17.51,9.31C13.273,46.115,3.819,36.661,3.819,25c0-11.662,9.454-21.115,21.115-21.115
+                        c7.289,0,13.714,3.693,17.51,9.31"/>
+                    <line fill="none" stroke="#909090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="22.245" y1="25.127" x2="46.051" y2="25.127"/>
+                    <polyline fill="none" stroke="#909090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+                        37.579,16.612 46.18,25.213 37.579,32.772 "/>
+                </svg> Logout
+            </div>
+        </div>
+    </div>
+</div>

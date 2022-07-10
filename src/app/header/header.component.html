@@ -1,0 +1,114 @@
+<!-- HEADER -->
+<div class="content-center fixed-header-margin">
+    <div class="header-wrapper style-15">
+        <header class="type-2">
+            <div class="headLine">
+                <div class="ticker">
+                    <p class="futura400">Check out our latest sale. Everything at 50% off!</p>
+                </div>
+            </div>
+            <div class="navigation-vertical-align">
+                <div class="cell-view logo-container">
+                    <a id="logo" href="/"><img src="assets/images/fashionLogoNew.png" alt="" /></a>
+                </div>
+                <div class="cell-view nav-container">
+                    <div class="navigation">
+                        <div class="navigation-header responsive-menu-toggle-class">
+                            <div class="title">Navigation</div>
+                            <div class="close-menu"></div>
+                        </div>
+                        <div class="nav-overflow">
+                            <nav>
+                                <ul>
+                                    <li class="simple-list">
+                                        <a href="/shop?tag=bestseller">Bestsellers</a>
+                                    </li>
+                                    <li class="simple-list">
+                                        <a href="/shop?tag=sale">sale</a>
+                                    </li>
+                                    <li class="single-width-columns simple-list">
+                                        <a class="transition menuAccordionTitle" href="/shop">For Him</a><i class="fa fa-chevron-down"></i>
+                                        <div class="submenu">
+                                            <ul class="simple-menu-list-column">
+                                                <li><a href="/shop?category=shirts">Shirts</a></li>
+                                                <li><a href="/shop?category=tshirts">Tshirts</a></li>
+                                                <li><a href="/shop?category=trousers">Trousers</a></li>
+                                                <li><a href="/shop?category=shoes">Shoes</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="full-width-columns">
+                                        <a class="fullMenuLink transition menuAccordionTitle" href="/shop">For Her</a><i class="fa fa-chevron-down"></i>
+                                        <div class="submenu customFullWidthSubmenu">
+                                            <div class="customFullWidthSubmenuInn">
+                                                <div class="product-column-entry">
+                                                    <div class="submenu-list-title"><a class="pageTitle" href="/shop">Clothing</a><span class="toggle-list-button"></span></div>
+                                                    <div class="description toggle-list-container">
+                                                        <ul class="list-type-1">
+                                                            <li><a href="/shop">Shop All</a></li>
+                                                            <li><a href="/shop?category=dresses">Dresses</a></li>
+                                                            <li><a href="/shop?category=tops">Tops</a></li>
+                                                            <li><a href="/shop?category=bottom">Bottom</a></li>
+                                                            <li><a href="/shop?category=skirts">Skirts</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="product-column-entry">
+                                                    <div class="submenu-list-title"><a class="pageTitle" href="/shop">Accessories</a><span class="toggle-list-button"></span></div>
+                                                    <div class="description toggle-list-container">
+                                                        <ul class="list-type-1">
+                                                            <li><a href="/shop?category=shoes">Shoes</a></li>
+                                                            <li><a href="/shop?category=bags">Bags</a></li>
+                                                            <li><a href="/shop?category=jewelry">Jewelry</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="product-column-entry fullMenuImg">
+                                                    <img class="lazyload" src="assets/images/fullMenuImg.jpg" alt="product">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="fixed-header-visible">
+                                        <a class="fixed-header-square-button cart-open-icon desktop-header-icons">
+                                            <img src="assets/images/icons/cart.svg" tile="" alt="shoping bag">
+                                            <div class="cart-no">{{cart_count}}</div>
+                                        </a>
+                                        <a href="/sign-in" class="fixed-header-square-button desktop-header-icons"><img class="lazyload" src="assets/images/icons/profile7.svg" data-src="assets/images/icons/profile7.svg" tile="" alt="Profile"></a>
+                                    </li>
+                                    <li class="profile-pages-mobile-header">
+                                        <a class="myAccountTitle menuAccordionTitle" href="javascript:void(0);">My account</a> <i class="fa fa-chevron-down"></i>
+                                        <div class="submenu">
+                                            <div class="submenu-list-title">
+                                                <a href="/profile"><img src="assets/images/icons/profile7.svg" alt="Profile" title=""> Profile</a>
+                                                <a href="/wishlist"><img src="assets/images/icons/wishlist12.svg" alt="Wishlist" title=""> Wishlist</a>
+                                                <a href="javascript:void();" (click)="logout()"><img src="assets/images/icons/logout5.svg" alt="logout" title=""> Logout</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="signInMobLink">
+                                        <a href="/sign-in">Sign In/Sign Up</a>
+                                    </li>
+                                </ul>
+                                <div class="clear"></div>
+
+                                <a href="/" class="fixed-header-visible additional-header-logo"><img  src="assets/images/fashionLogoNew.png" alt=""/></a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="responsive-menu-toggle-class">
+                        <a href="#" class="header-functionality-entry menu-button desktop-header-icons"><img src="assets/images/icons/humburgarMenu.svg" alt="Menu" title=""></a>
+                        <!-- <a href="profile.html" class="header-functionality-entry mobileProfile"><i class="fa fa-user-o" aria-hidden="true"></i></a> -->
+                        <a href="#" class="header-functionality-entry cart-open-icon mobileCart desktop-header-icons"><img src="assets/images/icons/cart.svg" tile="" alt="shoping bag">
+                            <div class="cart-no">{{cart_count}}</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="close-header-layer"></div>
+        </header>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<app-cart></app-cart>

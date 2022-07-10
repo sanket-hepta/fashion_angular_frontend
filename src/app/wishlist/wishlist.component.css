@@ -1,0 +1,7 @@
+.profile-sidebar-tab.title.wishlistLink.active a{
+    color:#1c1b1b;
+}
+.profile-sidebar-tab.title.wishlistLink.active svg{
+    filter: brightness(0);
+    -webkit-filter: brightness(0);
+}

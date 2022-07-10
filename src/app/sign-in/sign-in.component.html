@@ -1,0 +1,68 @@
+<div class="signInPage page-content user-resister-page margin-top-pages">
+    <div id="content-block" class="signInPage">
+        <app-header></app-header>
+        <div class="content-push">
+
+            <div class="userLogInWrapper" style="background-image: url();">
+                <img class="backgroundLeave backgroundLeave1" src="assets/images/signInBackLeaveLeft.png" alt="">
+                <img class="backgroundLeave backgroundLeave2" src="assets/images/signInBackLeaveRight.png" alt="">
+                <div class="signInBox box-shadow">
+                    <div class="signInHead">
+                        <h1 class="title pageTitle">Sign In</h1>
+                        <p>Not a member? <a href="/sign-up">Join Us</a></p>
+                    </div>
+                    
+                    <div class="signInForm">
+
+                        <div *ngIf="message" class="alert alert-success" role="alert">
+                            {{message}}
+                        </div>
+
+                        <div *ngIf="error_message" class="alert alert-danger" role="alert">
+                            {{error_message}}
+                        </div>
+                        
+                        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="form-elements col-sm-12">
+                                    <input type="email" formControlName="email" [ngClass]="{'is-invalid': submitted && form['email'].errors}"class="simple-field filledInput">
+                                    <span class="placeholder">Email</span>
+
+                                    <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['email'].errors['required']">
+                                            This value is required
+                                        </div>
+                                        <div *ngIf="form['email'].errors['email']">
+                                            Invalid email id field
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-elements col-sm-12">
+                                    <input type="password" formControlName="password" [ngClass]="{'is-invalid': submitted && form['password'].errors}" class="simple-field filledInput">
+                                    <span class="placeholder">Password</span>
+
+                                    <div *ngIf="submitted && form['password'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['password'].errors['required']">
+                                            This value is required
+                                        </div>
+                                        <div *ngIf="form['password'].errors['minlength']">
+                                            Password must be 8 chachters long.
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="signInBtnW">
+                                <div class="button style-10 animatedBtn black">Login<input type="submit" value=""></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>

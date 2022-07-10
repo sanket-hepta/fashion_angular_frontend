@@ -1,0 +1,42 @@
+<div class="PageOverlay"></div>
+<div class="productCartPopUpW transition">
+   <div class="productCartinner">
+       <div class="cartHeader">
+           <div class="cartTitle title">Cart ({{cart_count}})</div>
+           <div class="cartCloseBtn">
+                <div class="closeBtn">
+                   <span class="transition"></span>
+                   <span class="transition"></span>
+                </div>
+           </div> 
+       </div>
+
+        <div class="product-container customScroll" *ngIf="cart_count">
+            <div class="productBox traditional-cart-entry" *ngFor="let data of cart_data; let i = index;">
+                <a class="image" href="#"><img class="lazyload" src="{{data.image_url}}" alt=""></a>
+                <div class="content">
+                    <div class="cell-view">
+                        <div class="productHeading">
+                            <div class="productMainHeading pageTitle">{{data.product_name}}</div>
+                        </div>
+                        <div class="productPricing">
+                            <span class="productPrice priceHighlight pageTitle">&#8377; {{data.price}}</span>
+                        </div>
+                        <div class="quantity-selector detail-info-entry">
+                            <!-- <div class="entry number-minus pageTitle">&nbsp;</div> -->
+                            <div class="entry number pageTitle">1</div>
+                            <!-- <div class="entry number-plus pageTitle">&nbsp;</div> -->
+                        </div>
+                    </div>
+                    <!-- <div class="wishlistIco wishlist-icon"><i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </div> -->
+                    <a class="removeProduct pageTitle" (click)="removeCart(data._id)">Remove</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cartPriceTotal">
+            <a href="checkout"><div class="button pageTitle">CHECKOUT <span class="Button__SeparatorDot"></span> &#8377; {{cart_total}} </div></a>
+        </div>
+   </div>
+</div>

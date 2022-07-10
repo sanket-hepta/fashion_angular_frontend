@@ -1,0 +1,235 @@
+<div class="checkout-page checkout-mini mini-page">
+    <div id="content-block" class="checkoutPage">
+        <div class="header-wrapper style-10">
+            <header class="type-1">
+                <div class="checkoutHeader">
+                    <div class="checkoutHeaderIn continuShoping">
+                        <a href="shop"><img src="assets/images/icons/leftArrow-mini.svg" alt="Continue Shopping" title="Continue Shopping"><p class="pageTitle">Continue Shopping</p></a>
+                    </div>
+                    <div class="checkoutHeaderIn">
+                        <div class="checkoutLogoW">
+                            <a href="/"><img class="logo logoTop transition" src="assets/images/fashionLogo.png" alt="" title=""></a>
+                        </div>
+                    </div>
+                    <div class="checkoutHeaderIn secureCheckout">
+                        <i class="fa fa-lock" aria-hidden="true"></i><p class="pageTitle">Secure Checkout</p>
+                    </div>
+                    <div class="checkout-cart-btn">
+                        <img src="assets/images/icons/cart.svg" tile="" alt="shoping bag">
+                        <div class="cart-no">{{cart_count}}</div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <div class="content-center fixed-header-margin">
+            <div class="content-push">
+                <div class="information-blocks checkout-wrapper">
+                    <div class="row">
+                        <div class="checkout-left">
+
+                            <div *ngIf="message" class="alert alert-success" role="alert">
+                                {{message}}
+                            </div>
+    
+                            <div *ngIf="error_message" class="alert alert-danger" role="alert">
+                                {{error_message}}
+                            </div>
+
+                            <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+                                <div class="checkout-billing-address">
+                                    <div class="checkout-title title pageTitle">Shipping details</div>
+                                    <div class="row">
+                                        <div class="form-elements col-sm-6">
+                                            <input type="text" formControlName="first_name" [ngClass]="{'is-invalid': submitted && form['first_name'].errors}" placeholder="" class="simple-field filledInput">
+                                            <span class="placeholder">First Name</span>
+
+                                            <div *ngIf="submitted && form['first_name'].errors" class="invalid-feedback">
+                                                <div *ngIf="form['first_name'].errors['required']">
+                                                    This value is required
+                                                </div>
+                                                <div *ngIf="form['first_name'].errors['first_name']">
+                                                    Invalid first name field
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-elements col-sm-6">
+                                            <input type="text" formControlName="last_name" [ngClass]="{'is-invalid': submitted && form['last_name'].errors}" class="simple-field filledInput">
+                                            <span class="placeholder">Last Name</span>
+
+                                            <div *ngIf="submitted && form['last_name'].errors" class="invalid-feedback">
+                                                <div *ngIf="form['last_name'].errors['required']">
+                                                    This value is required
+                                                </div>
+                                                <div *ngIf="form['last_name'].errors['last_name']">
+                                                    Invalid last name field
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+
+                                        <div class="form-elements col-sm-6">
+                                            <input type="email" formControlName="email" [ngClass]="{'is-invalid': submitted && form['email'].errors}"class="simple-field filledInput">
+                                            <span class="placeholder">Email</span>
+
+                                            <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
+                                                <div *ngIf="form['email'].errors['required']">
+                                                    This value is required
+                                                </div>
+                                                <div *ngIf="form['email'].errors['email']">
+                                                    Invalid email id field
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-elements col-sm-6">
+                                            <input type="text" class="simple-field filledInput" formControlName="mobile_number" [ngClass]="{'is-invalid': submitted && form['mobile_number'].errors}">
+                                            <span class="placeholder">Mobile Number</span>
+
+                                            <div *ngIf="submitted && form['mobile_number'].errors" class="invalid-feedback">
+                                                <div *ngIf="form['mobile_number'].errors['required']">
+                                                    This value is required
+                                                </div>
+                                                <div *ngIf="form['mobile_number'].errors['mobile_number']">
+                                                    Invalid mobile number field
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+
+                                        <div class="form-elements col-sm-6">
+                                            <input type="text" formControlName="address" [ngClass]="{'is-invalid': submitted && form['address'].errors}" placeholder="" class="simple-field filledInput">
+                                            <span class="placeholder">Address</span>
+
+                                            <div *ngIf="submitted && form['address'].errors" class="invalid-feedback">
+                                                <div *ngIf="form['address'].errors['required']">
+                                                    This value is required
+                                                </div>
+                                                <div *ngIf="form['address'].errors['address']">
+                                                    Invalid address field
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-elements col-sm-6">
+                                            <input type="text" formControlName="pincode" [ngClass]="{'is-invalid': submitted && form['pincode'].errors}" placeholder="" class="simple-field filledInput">
+                                            <span class="placeholder">Pin code</span>
+
+                                            <div *ngIf="submitted && form['pincode'].errors" class="invalid-feedback">
+                                                <div *ngIf="form['pincode'].errors['required']">
+                                                    This value is required
+                                                </div>
+                                                <div *ngIf="form['pincode'].errors['pincode']">
+                                                    Invalid pincode field
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+
+                                        <div class="form-elements col-sm-6">
+                                            <input type="text" formControlName="city" [ngClass]="{'is-invalid': submitted && form['city'].errors}" placeholder="" class="simple-field filledInput">
+                                            <span class="placeholder">City</span>
+
+                                            <div *ngIf="submitted && form['city'].errors" class="invalid-feedback">
+                                                <div *ngIf="form['city'].errors['required']">
+                                                    This value is required
+                                                </div>
+                                                <div *ngIf="form['city'].errors['city']">
+                                                    Invalid city field
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-elements col-sm-6">
+                                            <input type="text" formControlName="state" [ngClass]="{'is-invalid': submitted && form['state'].errors}" placeholder="" class="simple-field filledInput">
+                                            <span class="placeholder">State</span>
+
+                                            <div *ngIf="submitted && form['state'].errors" class="invalid-feedback">
+                                                <div *ngIf="form['state'].errors['required']">
+                                                    This value is required
+                                                </div>
+                                                <div *ngIf="form['state'].errors['state']">
+                                                    Invalid state field
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-elements col-sm-12">
+                                        <div class="paymentMtitle checkout-title title pageTitle">Payment Methods</div>
+                                        <div class="payModeOptions">
+                                            <label class="checkbox-entry radio">
+                                                <input type="radio" name="payment_method" checked /> <span class="check"></span> COD
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="continueShoppingBtn">
+                                    <div class="button style-10 animatedBtn black">Proceed to payment<input type="submit" value=""></div>
+                                </div>
+                                <div class="tAndC"><p>*By confirming to proceed you agree to the <a href="javascript:void(0);" class="transition">Terms &amp; Conditions</a></p></div>
+                            </form>
+                        </div>
+                        <div class="checkout-right-wrapper transition">
+                            <div class="checkout-right">
+                                <div class="reviewYourOrder">Review Your Order</div>
+                                <div class="product-container customScroll" *ngIf="cart_count">
+
+                                    <div class="productBox traditional-cart-entry" *ngFor="let data of cart_data; let i = index;">
+                                        <a class="image" href="#"><img class="lazyload" data-src="{{data.image_url}}" alt=""></a>
+                                        <div class="content">
+                                            <div class="cell-view">
+                                                <div class="productHeading">
+                                                    <div class="productMainHeading pageTitle">{{data.product_name}}</div>
+                                                </div>
+                                                <div class="productPricing">
+                                                    <span class="productPrice priceHighlight pageTitle">&#8377; {{data.price}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="productPriceWrapper">
+                                    <form style="display: none;">
+                                        <div class="coponApplyW">
+                                            <input type="text" value="" placeholder="Promo code" class="simple-field">
+                                            <div class="button style-10 animatedBtn black"><span>Apply</span><input id="register" type="button"></div>
+                                            <div class="applyCouponSuccess">Promo code applied !</div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </form>
+                                    <div class="productPriceInner">
+                                        <div class="productPriceLabels">
+                                            <div class="productPriceHeading">Subtotal</div>
+                                            <div class="productPriceAmount">&#8377; {{cart_total}}</div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <!-- <div class="productPriceLabels priceDiscountLabel">
+                                            <div class="productPriceHeading">Discount</div>
+                                            <div class="productPriceAmount">- &#8377;119,9.9</div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="productPriceLabels">
+                                            <div class="productPriceHeading">Shipping</div>
+                                            <div class="productPriceAmount">&#8377;119,99</div>
+                                            <div class="clear"></div>
+                                        </div> -->
+                                        <div class="productPriceLabels productPriceTotalAmount">
+                                            <div class="productPriceHeading">Total</div>
+                                            <div class="productPriceAmount">&#8377; {{cart_total}}</div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    <div class="checkoutMobileBtn button style-10">Proceed</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

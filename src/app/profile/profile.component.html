@@ -1,0 +1,109 @@
+<div class="profile-pages margin-top-pages">
+    <div id="content-block">
+        <app-header></app-header>
+
+
+        <div class="content-center">
+            <div class="profile-pages-wrapper content-push">
+                <div class="row">
+
+                    <app-profile-sidebar></app-profile-sidebar>
+
+                    <div class="col-md-9">
+                        <div class="profile-page-content box-shadow">
+                            <div class="profileForm">
+                                <div class="profileHead">
+                                    <div class="profileHeadTitle title"><img src="assets/images/icons/profile7.svg" alt="wallet" title=""> Profile</div>
+                                    <!-- <div class="profileEdits">
+                                        Edit <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </div> -->
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div *ngIf="message" class="alert alert-success" role="alert">
+                                    {{message}}
+                                </div>
+        
+                                <div *ngIf="error_message" class="alert alert-danger" role="alert">
+                                    {{error_message}}
+                                </div>
+
+                                <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                                    <input type="hidden" [(ngModel)]="profileData._id" formControlName="id" />
+                                    <fieldset class="account-profile-fields">
+                                        <div class="row">
+                                            <div class="form-elements col-sm-6">
+                                                <input type="text" formControlName="first_name" [(ngModel)]="profileData.first_name" [ngClass]="{'is-invalid': submitted && form['first_name'].errors}" placeholder="" class="simple-field filledInput">
+                                                <span class="placeholder">First Name</span>
+            
+                                                <div *ngIf="submitted && form['first_name'].errors" class="invalid-feedback">
+                                                    <div *ngIf="form['first_name'].errors['required']">
+                                                        This value is required
+                                                    </div>
+                                                    <div *ngIf="form['first_name'].errors['first_name']">
+                                                        Invalid first name field
+                                                    </div>
+                                                </div>
+            
+                                            </div>
+                                            <div class="form-elements col-sm-6">
+                                                <input type="text" formControlName="last_name" [(ngModel)]="profileData.last_name" [ngClass]="{'is-invalid': submitted && form['last_name'].errors}" class="simple-field filledInput">
+                                                <span class="placeholder">Last Name</span>
+            
+                                                <div *ngIf="submitted && form['last_name'].errors" class="invalid-feedback">
+                                                    <div *ngIf="form['last_name'].errors['required']">
+                                                        This value is required
+                                                    </div>
+                                                    <div *ngIf="form['last_name'].errors['last_name']">
+                                                        Invalid last name field
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+
+                                            <div class="form-elements col-sm-6">
+                                                <input type="email" formControlName="email" [(ngModel)]="profileData.email" [ngClass]="{'is-invalid': submitted && form['email'].errors}"class="simple-field filledInput">
+                                                <span class="placeholder">Email</span>
+            
+                                                <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
+                                                    <div *ngIf="form['email'].errors['required']">
+                                                        This value is required
+                                                    </div>
+                                                    <div *ngIf="form['email'].errors['email']">
+                                                        Invalid email id field
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-elements col-sm-6 signInEmailMobInput">
+                                                <input type="text" class="simple-field filledInput" [(ngModel)]="profileData.mobile_number" formControlName="mobile_number" [ngClass]="{'is-invalid': submitted && form['mobile_number'].errors}">
+                                                <span class="placeholder">Mobile Number</span>
+            
+                                                <div *ngIf="submitted && form['mobile_number'].errors" class="invalid-feedback">
+                                                    <div *ngIf="form['mobile_number'].errors['required']">
+                                                        This value is required
+                                                    </div>
+                                                    <div *ngIf="form['mobile_number'].errors['mobile_number']">
+                                                        Invalid mobile number field
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+
+                                        </div>
+
+                                        <div class="button style-10 profile-page-button animatedBtn black">Save<input type="submit" value=""></div>
+                                        
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+        <app-footer></app-footer>
+    </div>
+</div>

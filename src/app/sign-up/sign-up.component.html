@@ -1,0 +1,112 @@
+<div class="signInPage page-content user-resister-page margin-top-pages">
+    <div id="content-block" class="signInPage">
+        <app-header></app-header>
+        <div class="content-push">
+
+            <div class="userLogInWrapper" style="background-image: url();">
+                <img class="backgroundLeave backgroundLeave1" src="assets/images/signInBackLeaveLeft.png" alt="">
+                <img class="backgroundLeave backgroundLeave2" src="assets/images/signInBackLeaveRight.png" alt="">
+                <div class="signInBox box-shadow">
+                    <div class="signInHead">
+                        <h1 class="title pageTitle">Sign Up</h1>
+                        <p>Already a member? <a href="/sign-in">Sign In</a></p>
+                    </div>
+                    
+                    <div class="signInForm">
+
+                        <div *ngIf="message" class="alert alert-success" role="alert">
+                            {{message}}
+                        </div>
+
+                        <div *ngIf="error_message" class="alert alert-danger" role="alert">
+                            {{error_message}}
+                        </div>
+                        
+                        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="form-elements col-sm-6">
+                                    <input type="text" formControlName="first_name" [ngClass]="{'is-invalid': submitted && form['first_name'].errors}" placeholder="" class="simple-field filledInput">
+                                    <span class="placeholder">First Name</span>
+
+                                    <div *ngIf="submitted && form['first_name'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['first_name'].errors['required']">
+                                            This value is required
+                                        </div>
+                                        <div *ngIf="form['first_name'].errors['first_name']">
+                                            Invalid first name field
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-elements col-sm-6">
+                                    <input type="text" formControlName="last_name" [ngClass]="{'is-invalid': submitted && form['last_name'].errors}" class="simple-field filledInput">
+                                    <span class="placeholder">Last Name</span>
+
+                                    <div *ngIf="submitted && form['last_name'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['last_name'].errors['required']">
+                                            This value is required
+                                        </div>
+                                        <div *ngIf="form['last_name'].errors['last_name']">
+                                            Invalid last name field
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+
+                                <div class="form-elements col-sm-6">
+                                    <input type="email" formControlName="email" [ngClass]="{'is-invalid': submitted && form['email'].errors}"class="simple-field filledInput">
+                                    <span class="placeholder">Email</span>
+
+                                    <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['email'].errors['required']">
+                                            This value is required
+                                        </div>
+                                        <div *ngIf="form['email'].errors['email']">
+                                            Invalid email id field
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-elements col-sm-6 signInEmailMobInput">
+                                    <input type="text" class="simple-field filledInput" formControlName="mobile_number" [ngClass]="{'is-invalid': submitted && form['mobile_number'].errors}">
+                                    <span class="placeholder">Mobile Number</span>
+
+                                    <div *ngIf="submitted && form['mobile_number'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['mobile_number'].errors['required']">
+                                            This value is required
+                                        </div>
+                                        <div *ngIf="form['mobile_number'].errors['mobile_number']">
+                                            Invalid mobile number field
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+
+                                <div class="form-elements col-sm-12">
+                                    <input type="password" formControlName="password" [ngClass]="{'is-invalid': submitted && form['password'].errors}" class="simple-field filledInput">
+                                    <span class="placeholder">Password</span>
+
+                                    <div *ngIf="submitted && form['password'].errors" class="invalid-feedback">
+                                        <div *ngIf="form['password'].errors['required']">
+                                            This value is required
+                                        </div>
+                                        <div *ngIf="form['password'].errors['minlength']">
+                                            Password must be 8 chachters long.
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="signInBtnW">
+                                <div class="button style-10 animatedBtn black">JOIN US<input type="submit" value=""></div>
+                            </div>
+                        </form>
+                        <div class="tAndC"><p>*By registering I agree the <a href="/">Terms &amp; Conditions</a> and <a href="/">Privacy Policy</a></p></div>
+                    </div>
+                </div>
+            </div>
+
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div id="content-block" class="produtListingPage">
+    <app-header></app-header>
+    
+    <div class="content-push">
+        <div class="productListingBanner" style="background-image:url('assets/images/desktopBanner3.jpg')">
+            <div class="content-center">
+                <div class="breadcrumb-box">
+                    <a href="#">Home</a>
+                    <a href="#">Shop</a>
+                </div>
+            </div>
+            <div class="content-center productListingBannerContent">
+                <div class="productListingBannerInn">
+                    <div class="information-blocks product-listing-header">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h1 class="title pageTitle">SHOP</h1>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-center">
+            <div class="information-blocks product-sidebar-container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="page-selector listing-top-page-selector" *ngIf="total_count">
+                            <div class="description">Showing {{total_count}} Results</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="row shop-grid grid-view" *ngIf="total_count">
+
+                            <div class="col-md-4 col-sm-4 shop-grid-item" *ngFor="let res of products; let i = index;">
+                                <div class="productBox">
+                                   <div class="ribbon pageTitle ribbon-success pageTitle">New</div>
+                                    <a href="/product/{{res.slug}}">
+                                        <div class="productImage">
+                                            <img src="{{res.image_url}}" alt="{{res.product_name}}" title="{{res.product_name}}">
+                                            <img class="alternateProuctImg" src="{{res.image_url}}" alt="{{res.product_name}}" title="{{res.product_name}}">
+                                        </div>
+                                        <div class="productDesc">
+                                            <div class="productHeading">
+                                                <div class="productMainHeading pageTitle">{{res.product_name}}</div>
+                                            </div>
+                                            <div class="productPricing">
+                                                <span class="productPrice priceHighlight pageTitle">&#8377; {{res.price}}</span>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <app-footer></app-footer>
+</div>

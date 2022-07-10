@@ -1,0 +1,59 @@
+<div id="content-block" class="productInnerPage">
+    <app-header></app-header>
+
+    <div class="content-push page-margin-top">
+        <div class="content-center">
+            <div class="breadcrumb-box">
+                <a href="/">Home</a>
+                <a href="/shop">Shop</a>
+                <a href="#">{{product.product_name}}</a>
+            </div>
+        </div>
+
+        <div class="productInnerMainSlider slider_initialize">
+            <div class="productInnSlide">
+                <img src="{{product.image_url}}" alt="{{product.product_name}}" title="{{product.product_name}}">
+            </div>
+            <div class="productInnSlide">
+                <img src="assets/images/products/big/product-44.jpg" alt="Product" title="">
+            </div>
+            <div class="productInnSlide">
+                <img src="assets/images/products/big/product-33.jpg" alt="Product" title="">
+            </div>
+            <div class="productInnSlide">
+                <img src="assets/images/products/big/product-44.jpg" alt="Product" title="">
+            </div>
+            <div class="productInnSlide">
+                <img src="assets/images/products/big/product-33.jpg" alt="Product" title="">
+            </div>
+            <div class="productInnSlide">
+                <img src="assets/images/products/big/product-22.jpg" alt="Product" title="">
+            </div>
+        </div>
+
+        <div class="content-center">
+            <div class="productInnerDesc topBottomSpacing">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="aboutProductLeft">
+                            <h2 class="pageTitle">{{product.product_name}}</h2>
+                            <p>{{product.description}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="aboutProductRight">
+                            <div class="productPricing">
+                                <span class="productPrice priceHighlight pageTitle">&#8377; {{product.price}}</span>
+                            </div>
+                            <div class="animatedBtn black" (click)="add_to_cart(product)">Add to cart</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <app-footer></app-footer>
+    </div>
+
+    
+</div>
